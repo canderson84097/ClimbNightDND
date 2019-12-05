@@ -10,11 +10,6 @@
 		445DCD6A2398D12800425B28 /* ClassListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445DCD692398D12800425B28 /* ClassListTableViewController.swift */; };
 		445DCD6E2398D14600425B28 /* ClassDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445DCD6D2398D14600425B28 /* ClassDetailTableViewController.swift */; };
 		445DCD702398D16000425B28 /* SpellDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445DCD6F2398D16000425B28 /* SpellDetailViewController.swift */; };
-		445DCD752398D58F00425B28 /* DNDClassController.m in Sources */ = {isa = PBXBuildFile; fileRef = 445DCD742398D58F00425B28 /* DNDClassController.m */; };
-		445DCD782398D65400425B28 /* DNDTopLevelResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 445DCD772398D65400425B28 /* DNDTopLevelResult.m */; };
-		445DCD7B2398D66100425B28 /* DNDSpell.m in Sources */ = {isa = PBXBuildFile; fileRef = 445DCD7A2398D66100425B28 /* DNDSpell.m */; };
-		445DCD7E2398DB8600425B28 /* DNDClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 445DCD7D2398DB8600425B28 /* DNDClass.m */; };
-		445DCD812398ED1700425B28 /* DNDSpellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 445DCD802398ED1700425B28 /* DNDSpellController.m */; };
 		44BD6D8D2398B3B600805525 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BD6D8C2398B3B600805525 /* AppDelegate.swift */; };
 		44BD6D8F2398B3B600805525 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BD6D8E2398B3B600805525 /* SceneDelegate.swift */; };
 		44BD6D942398B3B600805525 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44BD6D922398B3B600805525 /* Main.storyboard */; };
@@ -26,16 +21,6 @@
 		445DCD692398D12800425B28 /* ClassListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassListTableViewController.swift; sourceTree = "<group>"; };
 		445DCD6D2398D14600425B28 /* ClassDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailTableViewController.swift; sourceTree = "<group>"; };
 		445DCD6F2398D16000425B28 /* SpellDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellDetailViewController.swift; sourceTree = "<group>"; };
-		445DCD732398D58F00425B28 /* DNDClassController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNDClassController.h; sourceTree = "<group>"; };
-		445DCD742398D58F00425B28 /* DNDClassController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNDClassController.m; sourceTree = "<group>"; };
-		445DCD762398D65400425B28 /* DNDTopLevelResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNDTopLevelResult.h; sourceTree = "<group>"; };
-		445DCD772398D65400425B28 /* DNDTopLevelResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNDTopLevelResult.m; sourceTree = "<group>"; };
-		445DCD792398D66100425B28 /* DNDSpell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNDSpell.h; sourceTree = "<group>"; };
-		445DCD7A2398D66100425B28 /* DNDSpell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNDSpell.m; sourceTree = "<group>"; };
-		445DCD7C2398DB8600425B28 /* DNDClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNDClass.h; sourceTree = "<group>"; };
-		445DCD7D2398DB8600425B28 /* DNDClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNDClass.m; sourceTree = "<group>"; };
-		445DCD7F2398ED1700425B28 /* DNDSpellController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNDSpellController.h; sourceTree = "<group>"; };
-		445DCD802398ED1700425B28 /* DNDSpellController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNDSpellController.m; sourceTree = "<group>"; };
 		4463D1DD2398BBDD000FD4DA /* DND Reference-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DND Reference-Bridging-Header.h"; sourceTree = "<group>"; };
 		44BD6D892398B3B600805525 /* D&D Reference.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "D&D Reference.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		44BD6D8C2398B3B600805525 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -60,12 +45,6 @@
 		445DCD712398D56000425B28 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				445DCD762398D65400425B28 /* DNDTopLevelResult.h */,
-				445DCD772398D65400425B28 /* DNDTopLevelResult.m */,
-				445DCD7C2398DB8600425B28 /* DNDClass.h */,
-				445DCD7D2398DB8600425B28 /* DNDClass.m */,
-				445DCD792398D66100425B28 /* DNDSpell.h */,
-				445DCD7A2398D66100425B28 /* DNDSpell.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -73,10 +52,6 @@
 		445DCD722398D56900425B28 /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				445DCD732398D58F00425B28 /* DNDClassController.h */,
-				445DCD742398D58F00425B28 /* DNDClassController.m */,
-				445DCD7F2398ED1700425B28 /* DNDSpellController.h */,
-				445DCD802398ED1700425B28 /* DNDSpellController.m */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -206,15 +181,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				44BD6D8D2398B3B600805525 /* AppDelegate.swift in Sources */,
-				445DCD782398D65400425B28 /* DNDTopLevelResult.m in Sources */,
-				445DCD812398ED1700425B28 /* DNDSpellController.m in Sources */,
-				445DCD7E2398DB8600425B28 /* DNDClass.m in Sources */,
 				445DCD6E2398D14600425B28 /* ClassDetailTableViewController.swift in Sources */,
 				445DCD702398D16000425B28 /* SpellDetailViewController.swift in Sources */,
-				445DCD752398D58F00425B28 /* DNDClassController.m in Sources */,
 				445DCD6A2398D12800425B28 /* ClassListTableViewController.swift in Sources */,
 				44BD6D8F2398B3B600805525 /* SceneDelegate.swift in Sources */,
-				445DCD7B2398D66100425B28 /* DNDSpell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

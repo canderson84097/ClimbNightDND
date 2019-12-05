@@ -12,9 +12,6 @@ class SpellDetailViewController: UIViewController {
     
     // MARK: - Properties
     
-    var spellName: String?
-    var spellURL: URL?
-    
     // MARK: - Outlets
     
     @IBOutlet weak var levelLabel: UILabel!
@@ -28,33 +25,8 @@ class SpellDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setupViews()
     }
     
     // MARK: - Helpers
-    
-    func setupViews() {
-        
-        title = spellName
-        
-        guard let spellURL = spellURL else { return }
-        
-        DNDSpellController.fetchSpellDetails(from: spellURL) { spellDetails in
-            
-            guard let spellDetails = spellDetails else { return }
-            
-            DispatchQueue.main.async {
-                let level = spellDetails.level.intValue > 0 ? spellDetails.level : 0
-                self.levelLabel.text = "Level \(level)"
-                let components = spellDetails.components.joined(separator: ", ")
-                self.componentsLabel.text = components
-                self.concentrationLabel.text = spellDetails.concentration
-                self.rangeLabel.text = spellDetails.range
-                self.castingTimeLabel.text = spellDetails.castingTime
-                let spellDescription = spellDetails.spellDescription.joined(separator: " ")
-                self.descriptionTextView.text = spellDescription
-            }
-        }
-    }
+
 }
