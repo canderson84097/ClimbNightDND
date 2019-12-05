@@ -12,17 +12,8 @@ class ClassDetailTableViewController: UITableViewController {
     
     // MARK: - Properties
     
-    var className: String? {
-        didSet {
-            title = className
-            fetchSpells()
-        }
-    }
-    var classURL: URL? {
-        didSet {
-            fetchClassDetails()
-        }
-    }
+    var className: String?
+    var classURL: URL?
     var spells = [DNDTopLevelResult]()
     
     // MARK: - Outlets
@@ -38,6 +29,9 @@ class ClassDetailTableViewController: UITableViewController {
         
         // Hide empty cells
         tableView.tableFooterView = UIView()
+        
+        fetchClassDetails()
+        fetchSpells()
     }
 
     // MARK: - Table View Data Source
@@ -106,9 +100,5 @@ class ClassDetailTableViewController: UITableViewController {
                 self.tableView.reloadData()
             }
         }
-    }
-    
-    func setupViews() {
-        
     }
 }

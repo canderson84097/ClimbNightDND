@@ -17,6 +17,7 @@ static NSString * const apiKeyValue = @"123ABC";
 
 + (void)fetchClassesWithCompletionHandler:(void (^)(NSArray<DNDTopLevelResult *> *))completionHandler  {
     
+    // No API Key is necessary, but this is how you would do it if it needed one
     NSURL *url = [NSURL URLWithString:baseURL];
     NSURL *classesURL = [url URLByAppendingPathComponent:classesComponent];
     NSURLQueryItem *apiKeyQuery = [NSURLQueryItem queryItemWithName:apiKeyQueryKey value:apiKeyValue];
