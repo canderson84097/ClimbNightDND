@@ -26,7 +26,7 @@
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="(Class Name)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hvg-Og-fZ3">
                                             <rect key="frame" x="20" y="0.0" width="374" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -48,7 +48,7 @@
             </objects>
             <point key="canvasLocation" x="531.8840579710145" y="-504.24107142857139"/>
         </scene>
-        <!--(Class Name)-->
+        <!--Class Detail Table View Controller-->
         <scene sceneID="A4D-TM-B6B">
             <objects>
                 <tableViewController id="yKj-cx-oYa" customClass="ClassDetailTableViewController" customModule="DND_Reference" customModuleProvider="target" sceneMemberID="viewController">
@@ -72,7 +72,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(d12)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="nvW-Sd-Sjb">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="nvW-Sd-Sjb">
                                                     <rect key="frame" x="0.0" y="28.5" width="374" height="26.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <nil key="textColor"/>
@@ -81,7 +81,7 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="aFi-75-uUQ">
-                                            <rect key="frame" x="0.0" y="89" width="374" height="81.5"/>
+                                            <rect key="frame" x="0.0" y="98" width="374" height="55"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" verticalCompressionResistancePriority="1000" text="Proficiencies:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2j-NO-Ryy">
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
@@ -89,8 +89,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Light armor, Medium armor, Shields, Simple weapons)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="PKc-BF-lfN">
-                                                    <rect key="frame" x="0.0" y="28.5" width="374" height="53"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="loading.." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="PKc-BF-lfN">
+                                                    <rect key="frame" x="0.0" y="28.5" width="374" height="26.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -98,7 +98,7 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qu6-v4-uCA">
-                                            <rect key="frame" x="0.0" y="204.5" width="374" height="55"/>
+                                            <rect key="frame" x="0.0" y="195.5" width="374" height="55"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" verticalCompressionResistancePriority="1000" text="Saving Throws:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sed-q2-8nC">
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
@@ -106,7 +106,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(CHA, WIS)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="Zx2-mn-i6S">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="Zx2-mn-i6S">
                                                     <rect key="frame" x="0.0" y="28.5" width="374" height="26.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <nil key="textColor"/>
@@ -163,7 +163,7 @@
                             <outlet property="delegate" destination="yKj-cx-oYa" id="jG9-33-7J3"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="(Class Name)" id="1Ld-EO-NVw"/>
+                    <navigationItem key="navigationItem" id="1Ld-EO-NVw"/>
                     <connections>
                         <outlet property="hitDiceLabel" destination="nvW-Sd-Sjb" id="wgg-0n-3VX"/>
                         <outlet property="proficienciesLabel" destination="PKc-BF-lfN" id="EKn-tl-pNu"/>

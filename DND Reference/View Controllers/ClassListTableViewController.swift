@@ -10,23 +10,28 @@ import UIKit
 
 class ClassListTableViewController: UITableViewController {
     
+    // MARK: - Properties
+    
+    var classes = [DNDTopLevelResult]()
+    
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        fetchClasses()
     }
 
     // MARK: - Table View Data Source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return classes.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ClassCell", for: indexPath)
 
-        // Configure the cell...
+        cell.textLabel?.text = classes[indexPath.row].name
 
         return cell
     }
@@ -34,8 +39,32 @@ class ClassListTableViewController: UITableViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "CellToClassDetail" {
+            guard let indexPath = tableView.indexPathForSelectedRow,
+                let destination = segue.destination as? ClassDetailTableViewController
+                else { return }
+            
+            let dndClass = classes[indexPath.row]
+            
+            destination.className = dndClass.name
+            destination.classURL = dndClass.url
+        }
+    }
+    
+    // MARK: - Helpers
+    
+    func fetchClasses() {
+        DNDClassController.fetchClasses { [weak self] results in
+            guard let self = self,
+                let results = results
+            else { return }
+            
+            self.classes = results
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
 
 }
