@@ -12,6 +12,7 @@ class SpellDetailViewController: UIViewController {
     
     // MARK: - Properties
     
+    var spellName: String?
     var spellURL: URL?
     
     // MARK: - Outlets
@@ -34,6 +35,9 @@ class SpellDetailViewController: UIViewController {
     // MARK: - Helpers
     
     func setupViews() {
+        
+        title = spellName
+        
         guard let spellURL = spellURL else { return }
         
         DNDSpellController.fetchSpellDetails(from: spellURL) { spellDetails in

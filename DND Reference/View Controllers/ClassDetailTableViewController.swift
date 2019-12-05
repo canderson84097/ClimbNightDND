@@ -68,6 +68,7 @@ class ClassDetailTableViewController: UITableViewController {
             
             let spell = spells[indexPath.row]
             
+            destination.spellName = spell.name
             destination.spellURL = spell.url
         }
     }
