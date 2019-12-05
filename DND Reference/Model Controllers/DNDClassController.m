@@ -18,9 +18,9 @@ static NSString * const apiKeyValue = @"123ABC";
 + (void)fetchClassesWithCompletionHandler:(void (^)(NSArray<DNDTopLevelResult *> *))completionHandler  {
     
     NSURL *url = [NSURL URLWithString:baseURL];
-    url = [url URLByAppendingPathComponent:classesComponent];
+    NSURL *classesURL = [url URLByAppendingPathComponent:classesComponent];
     NSURLQueryItem *apiKeyQuery = [NSURLQueryItem queryItemWithName:apiKeyQueryKey value:apiKeyValue];
-    NSURLComponents *urlComponents = [NSURLComponents componentsWithURL:url resolvingAgainstBaseURL:YES];
+    NSURLComponents *urlComponents = [NSURLComponents componentsWithURL:classesURL resolvingAgainstBaseURL:YES];
     urlComponents.queryItems = @[apiKeyQuery];
     
     NSURL *finalURL = urlComponents.URL;

@@ -19,6 +19,7 @@ static NSString * const spellDescriptionKey = @"desc";
 
 - (instancetype)initWithLevel:(NSNumber *)level
                    components:(NSArray<NSString *> *)components
+                concentration:(NSString *)concentration
                         range:(NSString *)range
                   castingTime:(NSString *)castingTime
              spellDescription:(NSArray<NSString *> *)spellDescription {
@@ -26,6 +27,7 @@ static NSString * const spellDescriptionKey = @"desc";
     if (self == [super init]) {
         _level = level;
         _components = components;
+        _concentration = concentration;
         _range = range;
         _castingTime = castingTime;
         _spellDescription = spellDescription;
@@ -44,11 +46,12 @@ static NSString * const spellDescriptionKey = @"desc";
     
     NSNumber *level = dictionary[levelKey];
     NSArray<NSString *> *components = dictionary[componentsKey];
+    NSString *concentration = dictionary[concentrationKey];
     NSString *range = dictionary[rangeKey];
     NSString *castingTime = dictionary[castingTimeKey];
     NSArray<NSString *> *spellDescription = dictionary[spellDescriptionKey];
     
-    return [self initWithLevel:level components:components range:range castingTime:castingTime spellDescription:spellDescription];
+    return [self initWithLevel:level components:components concentration:concentration range:range castingTime:castingTime spellDescription:spellDescription];
 }
 
 @end
