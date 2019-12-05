@@ -41,7 +41,8 @@ class SpellDetailViewController: UIViewController {
             guard let spellDetails = spellDetails else { return }
             
             DispatchQueue.main.async {
-                self.levelLabel.text = "Level \(spellDetails.level)"
+                let level = spellDetails.level.intValue > 0 ? spellDetails.level : 0
+                self.levelLabel.text = "Level \(level)"
                 let components = spellDetails.components.joined(separator: ", ")
                 self.componentsLabel.text = components
                 self.concentrationLabel.text = spellDetails.concentration
