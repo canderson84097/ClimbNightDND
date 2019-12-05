@@ -7,19 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		445DCD6A2398D12800425B28 /* ClassListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445DCD692398D12800425B28 /* ClassListTableViewController.swift */; };
+		445DCD6C2398D13800425B28 /* SpellListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445DCD6B2398D13800425B28 /* SpellListTableViewController.swift */; };
+		445DCD6E2398D14600425B28 /* ClassDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445DCD6D2398D14600425B28 /* ClassDetailTableViewController.swift */; };
+		445DCD702398D16000425B28 /* SpellDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445DCD6F2398D16000425B28 /* SpellDetailViewController.swift */; };
 		44BD6D8D2398B3B600805525 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BD6D8C2398B3B600805525 /* AppDelegate.swift */; };
 		44BD6D8F2398B3B600805525 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BD6D8E2398B3B600805525 /* SceneDelegate.swift */; };
-		44BD6D912398B3B600805525 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BD6D902398B3B600805525 /* ViewController.swift */; };
 		44BD6D942398B3B600805525 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44BD6D922398B3B600805525 /* Main.storyboard */; };
 		44BD6D962398B3B700805525 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44BD6D952398B3B700805525 /* Assets.xcassets */; };
 		44BD6D992398B3B700805525 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44BD6D972398B3B700805525 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		44BD6D892398B3B600805525 /* DND Reference.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DND Reference.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		445DCD692398D12800425B28 /* ClassListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassListTableViewController.swift; sourceTree = "<group>"; };
+		445DCD6B2398D13800425B28 /* SpellListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellListTableViewController.swift; sourceTree = "<group>"; };
+		445DCD6D2398D14600425B28 /* ClassDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailTableViewController.swift; sourceTree = "<group>"; };
+		445DCD6F2398D16000425B28 /* SpellDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellDetailViewController.swift; sourceTree = "<group>"; };
+		4463D1DD2398BBDD000FD4DA /* DND Reference-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DND Reference-Bridging-Header.h"; sourceTree = "<group>"; };
+		44BD6D892398B3B600805525 /* D&D Reference.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "D&D Reference.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		44BD6D8C2398B3B600805525 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44BD6D8E2398B3B600805525 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		44BD6D902398B3B600805525 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		44BD6D932398B3B600805525 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		44BD6D952398B3B700805525 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44BD6D982398B3B700805525 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -48,7 +55,7 @@
 		44BD6D8A2398B3B600805525 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				44BD6D892398B3B600805525 /* DND Reference.app */,
+				44BD6D892398B3B600805525 /* D&D Reference.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,15 +63,35 @@
 		44BD6D8B2398B3B600805525 /* DND Reference */ = {
 			isa = PBXGroup;
 			children = (
+				44BD6DA02398B3CF00805525 /* View Controllers */,
+				44BD6D922398B3B600805525 /* Main.storyboard */,
+				44BD6DA12398B3ED00805525 /* Resources */,
+			);
+			path = "DND Reference";
+			sourceTree = "<group>";
+		};
+		44BD6DA02398B3CF00805525 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				445DCD692398D12800425B28 /* ClassListTableViewController.swift */,
+				445DCD6D2398D14600425B28 /* ClassDetailTableViewController.swift */,
+				445DCD6B2398D13800425B28 /* SpellListTableViewController.swift */,
+				445DCD6F2398D16000425B28 /* SpellDetailViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		44BD6DA12398B3ED00805525 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				44BD6D8C2398B3B600805525 /* AppDelegate.swift */,
 				44BD6D8E2398B3B600805525 /* SceneDelegate.swift */,
-				44BD6D902398B3B600805525 /* ViewController.swift */,
-				44BD6D922398B3B600805525 /* Main.storyboard */,
+				4463D1DD2398BBDD000FD4DA /* DND Reference-Bridging-Header.h */,
 				44BD6D952398B3B700805525 /* Assets.xcassets */,
 				44BD6D972398B3B700805525 /* LaunchScreen.storyboard */,
 				44BD6D9A2398B3B700805525 /* Info.plist */,
 			);
-			path = "DND Reference";
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,7 +111,7 @@
 			);
 			name = "DND Reference";
 			productName = "DND Reference";
-			productReference = 44BD6D892398B3B600805525 /* DND Reference.app */;
+			productReference = 44BD6D892398B3B600805525 /* D&D Reference.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -93,12 +120,14 @@
 		44BD6D812398B3B600805525 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = LRE;
 				LastSwiftUpdateCheck = 1120;
 				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = "Convenient Code, LLC";
 				TargetAttributes = {
 					44BD6D882398B3B600805525 = {
 						CreatedOnToolsVersion = 11.2.1;
+						LastSwiftMigration = 1120;
 					};
 				};
 			};
@@ -138,8 +167,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44BD6D912398B3B600805525 /* ViewController.swift in Sources */,
 				44BD6D8D2398B3B600805525 /* AppDelegate.swift in Sources */,
+				445DCD6E2398D14600425B28 /* ClassDetailTableViewController.swift in Sources */,
+				445DCD702398D16000425B28 /* SpellDetailViewController.swift in Sources */,
+				445DCD6C2398D13800425B28 /* SpellListTableViewController.swift in Sources */,
+				445DCD6A2398D12800425B28 /* ClassListTableViewController.swift in Sources */,
 				44BD6D8F2398B3B600805525 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,17 +316,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6R9933TQJB;
-				INFOPLIST_FILE = "DND Reference/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/DND Reference/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "dev.convenientcode.DND-Reference";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "D&D Reference";
+				SWIFT_OBJC_BRIDGING_HEADER = "DND Reference/Resources/DND Reference-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -302,17 +338,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6R9933TQJB;
-				INFOPLIST_FILE = "DND Reference/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/DND Reference/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "dev.convenientcode.DND-Reference";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "D&D Reference";
+				SWIFT_OBJC_BRIDGING_HEADER = "DND Reference/Resources/DND Reference-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
