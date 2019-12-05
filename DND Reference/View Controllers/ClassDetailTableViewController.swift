@@ -12,18 +12,17 @@ class ClassDetailTableViewController: UITableViewController {
     
     // MARK: - Properties
     
+    var className: String? {
+        didSet {
+            title = className
+            fetchSpells()
+        }
+    }
     var classURL: URL? {
         didSet {
             fetchClassDetails()
         }
     }
-    var className: String? {
-        didSet {
-            title = className
-            fetchSpellDetails()
-        }
-    }
-    var classDetails: DNDClass?
     var spells = [DNDTopLevelResult]()
     
     // MARK: - Outlets
@@ -44,10 +43,12 @@ class ClassDetailTableViewController: UITableViewController {
     // MARK: - Table View Data Source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return spells.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "SpellCell", for: indexPath)
 
         let spell = spells[indexPath.row]
@@ -59,8 +60,16 @@ class ClassDetailTableViewController: UITableViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "CellToSpellDetail" {
+            
+            guard let indexPath = tableView.indexPathForSelectedRow,
+                let destination = segue.destination as? SpellDetailViewController
+            else { return }
+            
+            let spell = spells[indexPath.row]
+            
+            destination.spellURL = spell.url
+        }
     }
     
     // MARK: - Helpers
@@ -68,18 +77,21 @@ class ClassDetailTableViewController: UITableViewController {
     func fetchClassDetails() {
         guard let url = classURL else { return }
         
-        DNDClassController.fetchClassDetails(from: url) { [weak self] classDetails in
-            guard let self = self else { return }
+        DNDClassController.fetchClassDetails(from: url) { classDetails in
             
-            self.classDetails = classDetails
+            guard let classDetails = classDetails else { return }
             
             DispatchQueue.main.async {
-                self.setupViews()
+                self.hitDiceLabel.text = "d\(classDetails.hitDice)"
+                let proficiencies = classDetails.proficiencies.joined(separator: ", ")
+                self.proficienciesLabel.text = proficiencies.capitalized(with: Locale.current)
+                let savingThrows = classDetails.savingThrows.joined(separator: ", ")
+                self.savingThrowsLabel.text = savingThrows
             }
         }
     }
     
-    func fetchSpellDetails() {
+    func fetchSpells() {
         guard let className = className else { return }
         
         DNDSpellController.fetchSpells(forClass: className) { [weak self] results in
@@ -87,7 +99,7 @@ class ClassDetailTableViewController: UITableViewController {
                 let results = results
             else { return }
             
-            self.spells = results
+            self.spells = results.sorted(by: { $0.name < $1.name })
             
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -96,12 +108,6 @@ class ClassDetailTableViewController: UITableViewController {
     }
     
     func setupViews() {
-        guard let classDetails = self.classDetails else { return }
         
-        hitDiceLabel.text = "\(classDetails.hitDice)"
-        let proficiencies = classDetails.proficiencies.joined(separator: ", ")
-        proficienciesLabel.text = proficiencies
-        let savingThrows = classDetails.savingThrows.joined(separator: ", ")
-        savingThrowsLabel.text = savingThrows
     }
 }

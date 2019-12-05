@@ -10,13 +10,20 @@
 
 static NSString * const baseURL = @"http://www.dnd5eapi.co/api";
 static NSString * const classesComponent = @"classes";
+static NSString * const apiKeyQueryKey = @"api_key";
+static NSString * const apiKeyValue = @"123ABC";
 
 @implementation DNDClassController
 
 + (void)fetchClassesWithCompletionHandler:(void (^)(NSArray<DNDTopLevelResult *> *))completionHandler  {
     
     NSURL *url = [NSURL URLWithString:baseURL];
-    NSURL *finalURL = [url URLByAppendingPathComponent:classesComponent];
+    url = [url URLByAppendingPathComponent:classesComponent];
+    NSURLQueryItem *apiKeyQuery = [NSURLQueryItem queryItemWithName:apiKeyQueryKey value:apiKeyValue];
+    NSURLComponents *urlComponents = [NSURLComponents componentsWithURL:url resolvingAgainstBaseURL:YES];
+    urlComponents.queryItems = @[apiKeyQuery];
+    
+    NSURL *finalURL = urlComponents.URL;
     
     [[NSURLSession.sharedSession dataTaskWithURL:finalURL completionHandler:^(NSData * _Nullable data,NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
@@ -78,9 +85,10 @@ static NSString * const classesComponent = @"classes";
             return;
         }
         
-        DNDClass *class = [[DNDClass alloc] initWithDictionary:jsonDict];
+        DNDClass *dndClass = [[DNDClass alloc] initWithDictionary:jsonDict];
         
-        completionHandler(class);
+        completionHandler(dndClass);
+        
     }] resume];
 }
 

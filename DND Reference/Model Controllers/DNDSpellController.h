@@ -17,9 +17,6 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)fetchSpellsForClass:(NSString *)className
                 completionHandler:(void (^)(NSArray<DNDTopLevelResult *> * _Nullable))completionHandler;
 
-+ (void)fetchSpellsMatchingSearch:(NSString *)searchTerm
-                completionHandler:(void (^)(NSArray<DNDTopLevelResult *> * _Nullable))completionHandler;
-
 + (void)fetchSpellDetailsFromURL:(NSURL *)url
                completionHandler:(void (^)(DNDSpell * _Nullable))completionHandler;
 

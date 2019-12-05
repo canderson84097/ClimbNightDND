@@ -10,6 +10,7 @@
 
 static NSString * const baseURL = @"http://www.dnd5eapi.co/api";
 static NSString * const spellsComponent = @"spells";
+static NSString * const nameQueryKey = @"name";
 
 @implementation DNDSpellController
 
@@ -23,7 +24,7 @@ static NSString * const spellsComponent = @"spells";
     [[NSURLSession.sharedSession dataTaskWithURL:finalURL completionHandler:^(NSData * _Nullable data,NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
         if (error) {
-            NSLog(@"Error fetching classes\nIn %s: %@\n---\n%@", __PRETTY_FUNCTION__, error.localizedDescription, error);
+            NSLog(@"Error fetching spells\nIn %s: %@\n---\n%@", __PRETTY_FUNCTION__, error.localizedDescription, error);
             completionHandler(nil);
             return;
         }
@@ -54,18 +55,13 @@ static NSString * const spellsComponent = @"spells";
     }] resume];
 }
 
-+ (void)fetchSpellsMatchingSearch:(NSString *)searchTerm
-                completionHandler:(void (^)(NSArray<DNDTopLevelResult *> * _Nullable))completionHandler {
-    
-}
-
 + (void)fetchSpellDetailsFromURL:(NSURL *)url
                completionHandler:(void (^)(DNDSpell * _Nullable))completionHandler {
     
     [[NSURLSession.sharedSession dataTaskWithURL:url completionHandler:^(NSData * _Nullable data,NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
         if (error) {
-            NSLog(@"Error fetching classes\nIn %s: %@\n---\n%@", __PRETTY_FUNCTION__, error.localizedDescription, error);
+            NSLog(@"Error fetching spell details\nIn %s: %@\n---\n%@", __PRETTY_FUNCTION__, error.localizedDescription, error);
             completionHandler(nil);
             return;
         }
@@ -76,7 +72,7 @@ static NSString * const spellsComponent = @"spells";
             return;
         }
         
-        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+        NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
         
         if (error) {
             NSLog(@"Error serializing JSON\nIn %s: %@\n---\n%@", __PRETTY_FUNCTION__, error.localizedDescription, error);
@@ -84,14 +80,9 @@ static NSString * const spellsComponent = @"spells";
             return;
         }
         
-        NSMutableArray *spells = [NSMutableArray new];
+        DNDSpell *spell = [[DNDSpell alloc] initWithDictionary:jsonDict];
         
-        for (NSDictionary *classDict in json[@"results"]) {
-            DNDTopLevelResult *class = [[DNDTopLevelResult alloc] initWithDictionary:classDict];
-            [spells addObject:class];
-        }
-        
-        completionHandler([spells copy]);
+        completionHandler(spell);
         
     }] resume];
 }

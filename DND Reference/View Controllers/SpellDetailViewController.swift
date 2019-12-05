@@ -10,6 +10,10 @@ import UIKit
 
 class SpellDetailViewController: UIViewController {
     
+    // MARK: - Properties
+    
+    var spellURL: URL?
+    
     // MARK: - Outlets
     
     @IBOutlet weak var levelLabel: UILabel!
@@ -17,13 +21,35 @@ class SpellDetailViewController: UIViewController {
     @IBOutlet weak var concentrationLabel: UILabel!
     @IBOutlet weak var rangeLabel: UILabel!
     @IBOutlet weak var castingTimeLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var descriptionTextView: UITextView!
     
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        setupViews()
+    }
+    
+    // MARK: - Helpers
+    
+    func setupViews() {
+        guard let spellURL = spellURL else { return }
+        
+        DNDSpellController.fetchSpellDetails(from: spellURL) { spellDetails in
+            
+            guard let spellDetails = spellDetails else { return }
+            
+            DispatchQueue.main.async {
+                self.levelLabel.text = "Level \(spellDetails.level)"
+                let components = spellDetails.components.joined(separator: ", ")
+                self.componentsLabel.text = components
+                self.concentrationLabel.text = spellDetails.concentration
+                self.rangeLabel.text = spellDetails.range
+                self.castingTimeLabel.text = spellDetails.castingTime
+                let spellDescription = spellDetails.spellDescription.joined(separator: " ")
+                self.descriptionTextView.text = spellDescription
+            }
+        }
     }
 }

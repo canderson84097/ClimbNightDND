@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		445DCD6A2398D12800425B28 /* ClassListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445DCD692398D12800425B28 /* ClassListTableViewController.swift */; };
-		445DCD6C2398D13800425B28 /* SpellListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445DCD6B2398D13800425B28 /* SpellListTableViewController.swift */; };
 		445DCD6E2398D14600425B28 /* ClassDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445DCD6D2398D14600425B28 /* ClassDetailTableViewController.swift */; };
 		445DCD702398D16000425B28 /* SpellDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445DCD6F2398D16000425B28 /* SpellDetailViewController.swift */; };
 		445DCD752398D58F00425B28 /* DNDClassController.m in Sources */ = {isa = PBXBuildFile; fileRef = 445DCD742398D58F00425B28 /* DNDClassController.m */; };
@@ -25,7 +24,6 @@
 
 /* Begin PBXFileReference section */
 		445DCD692398D12800425B28 /* ClassListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassListTableViewController.swift; sourceTree = "<group>"; };
-		445DCD6B2398D13800425B28 /* SpellListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellListTableViewController.swift; sourceTree = "<group>"; };
 		445DCD6D2398D14600425B28 /* ClassDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailTableViewController.swift; sourceTree = "<group>"; };
 		445DCD6F2398D16000425B28 /* SpellDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellDetailViewController.swift; sourceTree = "<group>"; };
 		445DCD732398D58F00425B28 /* DNDClassController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNDClassController.h; sourceTree = "<group>"; };
@@ -116,7 +114,6 @@
 			children = (
 				445DCD692398D12800425B28 /* ClassListTableViewController.swift */,
 				445DCD6D2398D14600425B28 /* ClassDetailTableViewController.swift */,
-				445DCD6B2398D13800425B28 /* SpellListTableViewController.swift */,
 				445DCD6F2398D16000425B28 /* SpellDetailViewController.swift */,
 			);
 			path = "View Controllers";
@@ -215,7 +212,6 @@
 				445DCD6E2398D14600425B28 /* ClassDetailTableViewController.swift in Sources */,
 				445DCD702398D16000425B28 /* SpellDetailViewController.swift in Sources */,
 				445DCD752398D58F00425B28 /* DNDClassController.m in Sources */,
-				445DCD6C2398D13800425B28 /* SpellListTableViewController.swift in Sources */,
 				445DCD6A2398D12800425B28 /* ClassListTableViewController.swift in Sources */,
 				44BD6D8F2398B3B600805525 /* SceneDelegate.swift in Sources */,
 				445DCD7B2398D66100425B28 /* DNDSpell.m in Sources */,

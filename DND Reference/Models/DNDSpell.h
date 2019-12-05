@@ -12,7 +12,20 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface DNDSpell : NSObject
 
+@property (nonatomic, strong, readonly) NSNumber *level;
+@property (nonatomic, copy, readonly) NSArray<NSString *> *components;
+@property (nonatomic, copy, readonly) NSString *concentration;
+@property (nonatomic, copy, readonly) NSString *range;
+@property (nonatomic, copy, readonly) NSString *castingTime;
+@property (nonatomic, copy, readonly) NSArray<NSString *> *spellDescription;
 
+@end
+
+#pragma mark - JSONConvertible
+
+@interface DNDSpell (JSONConvertible)
+
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
 @end
 
